@@ -6,8 +6,11 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 
+app.get('/', (req, res) => {
+  res.send('Hello World Storage!')
+})
 io.on("connection", (socket) => {
   console.log("A user connected");
 
