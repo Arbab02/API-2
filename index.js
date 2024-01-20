@@ -6,7 +6,6 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
 
-const PORT = process.env.PORT || 5000;
 
 app.get('/', (req, res) => {
   res.send('Hello World Storage!')
@@ -25,6 +24,7 @@ io.on("connection", (socket) => {
   });
 });
 
+const PORT = process.env.PORT || 8080;
 server.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
